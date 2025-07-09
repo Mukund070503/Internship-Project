@@ -1,0 +1,8 @@
+/Users/mukundnarsaria/Desktop/Java/mysqlConnection/src/main/java/com/database_connection/mysqlConnection/MysqlConnectionApplication.java
+/Users/mukundnarsaria/Desktop/Java/mysqlConnection/src/main/java/com/database_connection/mysqlConnection/dbController/BaseController.java
+/Users/mukundnarsaria/Desktop/Java/mysqlConnection/src/main/java/com/database_connection/mysqlConnection/dbController/DbController.java
+/Users/mukundnarsaria/Desktop/Java/mysqlConnection/src/main/java/com/database_connection/mysqlConnection/entities/LimitRule.java
+/Users/mukundnarsaria/Desktop/Java/mysqlConnection/src/main/java/com/database_connection/mysqlConnection/entities/LimitRulesRequestDTO.java
+/Users/mukundnarsaria/Desktop/Java/mysqlConnection/src/main/java/com/database_connection/mysqlConnection/repository/RuleInterface.java
+/Users/mukundnarsaria/Desktop/Java/mysqlConnection/src/main/java/com/database_connection/mysqlConnection/serviceImpPackage/ServiceImp.java
+/Users/mukundnarsaria/Desktop/Java/mysqlConnection/src/main/java/com/database_connection/mysqlConnection/servicePackage/ServiceInterface.java

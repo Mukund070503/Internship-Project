@@ -1,0 +1,8 @@
+com/database_connection/mysqlConnection/servicePackage/ServiceInterface.class
+com/database_connection/mysqlConnection/entities/LimitRule.class
+com/database_connection/mysqlConnection/serviceImpPackage/ServiceImp.class
+com/database_connection/mysqlConnection/dbController/BaseController.class
+com/database_connection/mysqlConnection/repository/RuleInterface.class
+com/database_connection/mysqlConnection/dbController/DbController.class
+com/database_connection/mysqlConnection/entities/LimitRulesRequestDTO.class
+com/database_connection/mysqlConnection/MysqlConnectionApplication.class
