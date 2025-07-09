@@ -1,0 +1,62 @@
+<div class="background">
+  <div type="" class="buttons">
+    <button [routerLink]="['/reload']">Reload Rules</button>
+    <button [routerLink]="['/new-rule']">Insert Rule</button>
+  </div>
+  <div class="content">
+    <div *ngIf="rulesData.length > 0; else noData">
+      <table class="data_table">
+        <thead>
+          <tr>
+            <th>Service ID</th>
+            <th>Rule ID</th>
+            <th>Rule Code</th>
+            <th>Amount Limit</th>
+            <th>Min Amount</th>
+            <th>Max Amount</th>
+            <th>Eligibility</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>Update Rule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let service of rulesData">
+            <!-- PARENT ROW: Service ID -->
+            <tr class="parent-row">
+              <td colspan="11"><strong>Service ID:</strong> {{ service.ServiceId }}</td>
+            </tr>
+        
+            <!-- CHILD ROWS: All LimitRules -->
+            <tr *ngFor="let rule of service.LimitRules" class="child-row">
+              <td></td> <!-- Empty cell for alignment -->
+              <td>{{ rule.RULE_ID }}</td>
+              <td>{{ rule.RULE_CODE }}</td>
+              <td>{{ rule.AMOUNT_LIMIT }}</td>
+              <td>{{ rule.MIN_AMOUNT }}</td>
+              <td>{{ rule.MAX_AMOUNT }}</td>
+              <td>{{ rule.ELIGIBILITY }}</td>
+              <td>{{ rule.START_DATETIME | date:'yyyy-MM-dd HH:mm' }}</td>
+              <td>{{ rule.END_DATETIME | date:'yyyy-MM-dd HH:mm' }}</td>
+              <td>{{ rule.STATUS }}</td>
+              <td>
+                <button class="editButton" (click)="setEditRule(service.ServiceId,rule)" mat-fab [routerLink]="['/editRule']">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+        
+        
+      </table>
+    </div>
+    
+    <ng-template #noData>
+      <p>No data available</p>
+    </ng-template>
+  </div>
+  </div>
+
+  

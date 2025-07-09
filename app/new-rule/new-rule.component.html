@@ -1,0 +1,143 @@
+<div class="background">
+    <div type="" class="buttons">
+        <button [routerLink]="['/reload']">Reload Rules</button>
+        <button [routerLink]="['/new-rule']">Insert Rule</button>
+    </div>
+    <div class="content">
+<div class="container">
+    <form #bankForm="ngForm" (ngSubmit)="onSubmit(bankForm)">
+        <div class="form-group">
+            <label>Service ID *</label>
+            <input type="text" name='serviceId' #serviceId="ngModel" [(ngModel)]="model.serviceId" required placeholder="Service ID">
+
+        @if (serviceId.invalid && serviceId.touched) {
+            <div class="missingValue">
+                Service Id is required.
+            </div>
+        }
+        </div>
+
+        <div class="form-group">
+            <label>Key Template *</label>
+            <input type="text" placeholder="Key Template" name="keyTemplate" #keyTemplate="ngModel" [(ngModel)]="model.keyTemplate" required>
+
+            @if (keyTemplate.invalid && keyTemplate.touched) {
+                <div class="missingValue">
+                    Key Template is required.
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Timeframe *</label>
+            <select name="timeFrame" #timeFrame="ngModel" [(ngModel)]="model.timeFrame" required>
+                <option>DAY</option>
+                <option>WEEK</option>
+                <option>MONTH</option>
+                <option>YEAR</option>
+            </select>
+            @if (timeFrame.invalid && timeFrame.touched) {
+                <div class="missingValue">
+                    Time Frame is required.
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Amount Limit</label>
+            <input type="text" placeholder="Amount Limit" name="amountLimit" #amountLimit="ngModel" [(ngModel)]="model.amountLimit">
+        </div>
+
+        <div class="form-group">
+            <label>Count Limit</label>
+            <input type="text" placeholder="Count Limit" name="countLimit" #countLimit="ngModel" [(ngModel)]="model.countLimit">
+        </div>
+
+        <div class="form-group">
+            <label>Start Date *</label>
+            <input type="datetime-local" name="startDate" #startDate="ngModel" [(ngModel)]="model.startDateTime" required>
+            @if (startDate.invalid && startDate.touched) {
+                <div class="missingValue">
+                    Start Date is required.
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>End Date</label>
+            <input type="datetime-local" name="endDate" #endDate="ngModel" [(ngModel)]="model.endDateTime">
+        </div>
+
+        <div class="form-group">
+            <label>Precedence *</label>
+            <input type="text" placeholder="Precedence " name="precedence" #precedence="ngModel" [(ngModel)]="model.precedence" required>
+            @if (precedence.invalid && precedence.touched) {
+                <div class="missingValue">
+                    Precedence is required.
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Eligibility *</label>
+            <select name="eligibility" #eligibility="ngModel" [(ngModel)]="model.eligibility" required>
+                <option>true</option>
+                <option>false</option>
+            </select>
+            @if (eligibility.invalid && eligibility.touched) {
+                <div class="missingValue">
+                    Eligibility is required.
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Min Amount</label>
+            <input type="text" placeholder="Min Amount" name="minAmount" #minAmount="ngModel" [(ngModel)]="model.minAmount">
+        </div>
+
+        <div class="form-group">
+            <label>Max Amount</label>
+            <input type="text" placeholder="Max Amount" name="maxAmount" #maxAmount="ngModel" [(ngModel)]="model.maxAmount">
+        </div>
+
+        <div class="form-group">
+            <label>Status *</label>
+            <select name="status" #status="ngModel" [(ngModel)]="model.status" required>
+                <option>ACTIVE</option>
+                <option>INACTIVE</option>
+            </select>
+            @if (status.invalid && status.touched) {
+                <div class="missingValue">
+                    Status is required.
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Rule Code *</label>
+            <input type="text" placeholder="Rule Code" name="ruleCode" #ruleCode="ngModel" [(ngModel)]="model.ruleCode" required>
+            @if (ruleCode.invalid && ruleCode.touched) {
+                <div class="missingValue">
+                    Rule Code is required.
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Rule Group *</label>
+            <input type="text" placeholder="Rule Group" name="ruleGroup" #ruleGroup="ngModel" [(ngModel)]="model.ruleGroup" required>
+            @if (ruleGroup.invalid && ruleGroup.touched) {
+                <div class="missingValue">
+                    Rule Group is required.
+                </div>
+            }
+        </div>
+
+        <div class="submit-btn ">
+            <button type="submit" class="submitButton">Submit</button>
+        </div>
+    </form>
+</div>
+</div>
+</div>

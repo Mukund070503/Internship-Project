@@ -1,0 +1,19 @@
+<div class="content">
+    <div class="container">
+        <form #bankForm="ngForm" (ngSubmit)="onSubmit(bankForm)">
+            <div class="form-group">
+                <label>ID *</label>
+                <input type="text" name='id' #id="ngModel" [(ngModel)]="model.id" required placeholder="id">
+    
+            @if (id.invalid && id.touched) {
+                <div class="missingValue">
+                    Id is required.
+                </div>
+            }
+            </div>
+            <div class="submit-btn ">
+                <button type="submit" class="submitButton">Submit</button>
+            </div>
+        </form>
+    </div>
+    </div>

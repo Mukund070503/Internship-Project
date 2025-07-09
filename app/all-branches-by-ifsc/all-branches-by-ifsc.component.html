@@ -1,0 +1,62 @@
+<div class="background">
+    <!-- Sidebar Navigation -->
+    <div class="buttons">
+      <button [routerLink]="['/bank']">Banks</button>
+      <button [routerLink]="['/branches']">Branches</button>
+    </div>
+   
+    <!-- Main Content -->
+    <div class="content">
+      <h2>All Branches By IFSC</h2>
+  
+      <div *ngIf="branchesData && branchesData.length > 0; else noBranchData">
+        <table class="data_table">
+          <thead>
+            <tr>
+              <th>IFSC</th>
+              <th>Address</th>
+              <th>Bank Code</th>
+              <th>Branch Name</th>
+              <th>City</th>
+              <th>District ID</th>
+              <th>MICR Code</th>
+              <th>Phone</th>
+              <th>State Code</th>
+              <th>Enabled</th>
+              <th>Edit Branch</th>
+              <th>Delete Branch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let branch of branchesData">
+              <td>{{ branch.ifsc }}</td>
+              <td>{{ branch.address }}</td>
+              <td>{{ branch.bankCode }}</td>
+              <td>{{ branch.branchName }}</td>
+              <td>{{ branch.city }}</td>
+              <td>{{ branch.districtId }}</td>
+              <td>{{ branch.micrCode }}</td>
+              <td>{{ branch.phone }}</td>
+              <td>{{ branch.stateCode }}</td>
+              <td>{{ branch.isEnabled ? 'Yes' : 'No' }}</td>
+              <td>
+                <button class="editButton"  mat-fab [routerLink]="['/update-team']">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+              <td>
+                <button class="deleteButton" (click)="deleteBranch(branch)" mat-fab >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <ng-template #noBranchData>
+        <p>No branch data available.</p>
+      </ng-template>
+      </div>
+      </div>
+    

@@ -1,0 +1,88 @@
+<div class="background">
+    <!-- Sidebar Navigation -->
+    <div class="buttons">
+      <button [routerLink]="['/bank']">Banks</button>
+      <button [routerLink]="['/branches']">Branches</button>
+    </div>
+   
+    <!-- Main Content -->
+    <div class="content">
+      <h2>All Branches</h2>
+  
+      <div *ngIf="branchesData && branchesData.length > 0; else noBranchData">
+        <table class="data_table">
+          <thead>
+            <tr>
+              <th>IFSC</th>
+              <th>Address</th>
+              <th>Bank Code</th>
+              <th>Branch Name</th>
+              <th>City</th>
+              <th>District ID</th>
+              <th>MICR Code</th>
+              <th>Phone</th>
+              <th>State Code</th>
+              <th>Enabled</th>
+              <th>Edit Branch</th>
+              <th>Delete Branch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let branch of branchesData">
+              <td>{{ branch.ifsc }}</td>
+              <td>{{ branch.address }}</td>
+              <td>{{ branch.bankCode }}</td>
+              <td>{{ branch.branchName }}</td>
+              <td>{{ branch.city }}</td>
+              <td>{{ branch.districtId }}</td>
+              <td>{{ branch.micrCode }}</td>
+              <td>{{ branch.phone }}</td>
+              <td>{{ branch.stateCode }}</td>
+              <td>{{ branch.isEnabled ? 'Yes' : 'No' }}</td>
+              <td>
+                <button class="editButton" mat-fab (click)="setEditBank(branch)" [routerLink]="['/update-branch']">
+                 <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+              <td>
+                <button class="deleteButton" (click)="deleteBranch(branch)" mat-fab >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <ng-template #noBranchData>
+        <p>No branch data available.</p>
+      </ng-template>
+      <div>
+        <h3>New Branch</h3>
+         <div class="submit-btn ">
+                  <button type="Button" [routerLink]="['/new-branch']" class="submitButton">New Branch</button>
+          </div>
+      </div>
+      <div>
+        <h3>Search By</h3>
+        <div class="container">
+          <form #bankForm="ngForm" (ngSubmit)="onSubmit(bankForm)">
+              <div class="form-group">
+                  <input type="text" name='IFSC' #IFSC="ngModel" [(ngModel)]="model.ifsc" required placeholder="IFSC">
+      
+              @if (IFSC.invalid && IFSC.touched) {
+                  <div class="missingValue">
+                      IFSC is required.
+                  </div>
+              }
+              </div>
+              <div class="submit-btn ">
+                  <button type="submit" class="submitButton">Submit</button>
+              </div>
+          </form>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+  

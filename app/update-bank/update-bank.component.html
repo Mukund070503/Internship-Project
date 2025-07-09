@@ -1,0 +1,70 @@
+<div class="background">
+    <!-- Sidebar Navigation -->
+    <div class="buttons">
+      <button [routerLink]="['/bank']">Banks</button>
+      <button [routerLink]="['/branches']">Branches</button>
+    </div>
+   <div class="content">
+    <form #bankForm="ngForm" (ngSubmit)="onSubmit(bankForm)">
+      <div class="form-group">
+        <label>Bank Code</label>
+        <input type="text" name="bankCode" [(ngModel)]="model.bankCode" placeholder="Bank Code *" required />
+      </div>
+
+      <div class="form-group">
+        <label>Bank Name</label>
+        <input type="text" name="name" [(ngModel)]="model.name" placeholder="Bank Name *" required />
+      </div>
+
+      <div class="form-group">
+        <label>Default IFSC</label>
+        <input type="text" name="defaultIfsc" [(ngModel)]="model.defaultIfsc" placeholder="Default IFSC" disabled="true"/>
+      </div>
+
+      <div class="form-group">
+        <label>Enabled</label>
+        <select name="isEnabled" [(ngModel)]="model.isEnabled">
+          <option [ngValue]="true">Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>IMPS Enabled</label>
+        <select name="isImpsEnabled" [(ngModel)]="model.isImpsEnabled">
+          <option [ngValue]="true">True</option>
+          <option [ngValue]="false">False</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Load Cash Enabled</label>
+        <select name="isLoadCashEnabled" [(ngModel)]="model.isLoadCashEnabled">
+          <option [ngValue]="true">True</option>
+          <option [ngValue]="false">False</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>UPI Enabled</label>
+        <select name="isUpiEnabled" [(ngModel)]="model.isUpiEnabled">
+          <option [ngValue]="true">True</option>
+          <option [ngValue]="false">False</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>IIN</label>
+        <input type="text" name="iin" [(ngModel)]="model.iin" placeholder="IIN" />
+      </div>
+
+      <div class="form-group">
+        <label>Bank Icon URL</label>
+        <input type="text" name="bankIconUrl" [(ngModel)]="model.bankIconUrl" placeholder="Bank Icon URL" />
+      </div>
+
+      <div class="submit-btn">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>

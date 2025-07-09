@@ -1,0 +1,128 @@
+<div class="background">
+    <div class="buttons">
+      <button [routerLink]="['/reload-team']">Reload Teams</button>
+      <button [routerLink]="['/new-team']">Insert Teams</button>
+    </div>
+  
+    <div class="content">
+      <div class="container">
+        <form #teamForm="ngForm" (ngSubmit)="onSubmit(teamForm)">
+
+          <div class="form-group">
+            <label>Team Name *</label>
+            <input
+              type="text"
+              name="team_name"
+              [(ngModel)]="model.teamName"
+              required
+              #teamName="ngModel"
+              placeholder="Team Name"
+            />
+            <div class="missingValue" *ngIf="teamName.invalid && teamName.touched">
+              Team Name is required.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Team DL *</label>
+            <input
+              type="text"
+              name="team_dl"
+              [(ngModel)]="model.teamDl"
+              required
+              #teamDl="ngModel"
+              placeholder="Team DL"
+            />
+            <div class="missingValue" *ngIf="teamDl.invalid && teamDl.touched">
+              Team DL is required.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Application Name *</label>
+            <input
+              type="text"
+              name="application_name"
+              [(ngModel)]="model.applicationName"
+              required
+              #applicationName="ngModel"
+              placeholder="Application Name"
+            />
+            <div class="missingValue" *ngIf="applicationName.invalid && applicationName.touched">
+              Application Name is required.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Service ID *</label>
+            <input
+              type="text"
+              name="service_id"
+              [(ngModel)]="model.serviceId"
+              required
+              #serviceId="ngModel"
+              placeholder="Service ID"
+            />
+            <div class="missingValue" *ngIf="serviceId.invalid && serviceId.touched">
+              Service ID is required.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Description *</label>
+            <input
+              type="text"
+              name="description"
+              [(ngModel)]="model.description"
+              required
+              #description="ngModel"
+              placeholder="Description"
+            />
+            <div class="missingValue" *ngIf="description.invalid && description.touched">
+              Description is required.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Average Traffic </label>
+            <input
+              type="text"
+              name="Average_Traffic"
+              [(ngModel)]="model.averageTraffic"
+              #averageTraffic="ngModel"
+              placeholder="Average Traffic"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label>Peak Traffic</label>
+            <input
+              type="text"
+              name="Peak_Traffic"
+              [(ngModel)]="model.peakTraffic"
+              #peakTraffic="ngModel"
+              placeholder="Peak Traffic"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label>Peak Traffic Hours</label>
+            <input
+              type="text"
+              name="Peak_Traffic_Hrs"
+              [(ngModel)]="model.peakTrafficHrs"
+              #peakTrafficHrs="ngModel"
+              placeholder="Peak Traffic Hours"
+            />
+          </div>
+  
+          <div class="submit-btn">
+            <button type="submit" class="submitButton">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

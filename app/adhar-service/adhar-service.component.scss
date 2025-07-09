@@ -1,0 +1,92 @@
+/* Make body and html take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdfafa;
+  }
+  
+  /* Container fills full height minus header */
+  .container {
+    min-height: calc(100vh - 70px); /* Assuming .header is 70px */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Start form at top */
+    padding: 40px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  /* Inner form content with max width */
+  form {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+  
+  /* Rest of form styling */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+  
+  input,
+  select {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus,
+  select:focus {
+    outline: none;
+    border-color: #5c6bc0;
+    box-shadow: 0 0 4px rgba(92, 107, 192, 0.3);
+  }
+  
+  .missingValue {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+  
+  .submit-btn {
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .submitButton {
+    background-color: #5c6bc0;
+    color: white;
+    width: 200px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .submitButton:hover {
+    background-color: #3f51b5;
+  }
+  

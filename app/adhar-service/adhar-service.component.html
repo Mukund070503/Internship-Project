@@ -1,0 +1,74 @@
+<div class="container">
+    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+        <div class="form-group">
+            <label>ID *</label>
+            <input type="number" name='Id' #Id="ngModel" [(ngModel)]="model.id" required placeholder="Service ID">
+
+        @if (Id.invalid && Id.touched) {
+            <div class="missingValue">
+                Id is required.
+            </div>
+        }
+        </div>
+
+        <div class="form-group">
+            <label>Service Id *</label>
+            <input type="text" placeholder="Service Id" name="serviceId" #serviceId="ngModel" [(ngModel)]="model.service_id" required>
+
+            @if (serviceId.invalid && serviceId.touched) {
+                <div class="missingValue">
+                    Service Id is required.
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Client Id *</label>
+            <input type="text" name="clientId" placeholder="Client Id" #clientId="ngModel" [(ngModel)]="model.client_id" required>
+            @if (clientId.invalid && clientId.touched) {
+                <div class="missingValue">
+                    Client Id is required.
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Client Name *</label>
+            <input type="text" placeholder="Client Name" name="clientName" #clientName="ngModel" [(ngModel)]="model.client_name" required>
+            @if (clientName.invalid && clientName.touched) {
+                <div class="missingValue">
+                    Client Name is required.
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Client Secret *</label>
+            <input type="text" placeholder="Client Secret" name="clientSecret" #clientSecret="ngModel" [(ngModel)]="model.client_secret" required>
+            @if (clientSecret.invalid && clientSecret.touched) {
+                <div class="missingValue">
+                    Client Secret is required.
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Token Value</label>
+            <input type="text" placeholder="Token Value" name="tokenValue" #tokenValue="ngModel" [(ngModel)]="model.token_value" >
+        </div>
+
+        <div class="form-group">
+            <label>Adhar Number *</label>
+            <input type="text" placeholder="Adhar Number" name="adharNumber" #adharNumber="ngModel" [(ngModel)]="model.adhar_number" required>
+            @if (adharNumber.invalid && adharNumber.touched) {
+                <div class="missingValue">
+                    Adhar Number is required.
+                </div>
+            }
+        </div>
+
+        <div class="submit-btn ">
+            <button type="submit" class="submitButton">Submit</button>
+        </div>
+    </form>
+</div>

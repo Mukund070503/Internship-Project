@@ -1,0 +1,104 @@
+.background {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background-color: #FFF7F3;
+}
+
+.buttons {
+    background-color: #ffffff;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 60px;
+    gap: 40px;
+    border-right: 2px solid #E3D2C3;
+}
+
+.buttons button {
+    width: 80%;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #524cf8;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #4239e0;
+}
+
+.content {
+    width: 80%;
+    padding: 40px;
+}
+
+.container {
+    background-color: #F6F0F0;
+    padding: 30px;
+    border-radius: 10px;
+    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-btn {
+    grid-column: 1 / -1; 
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submit-btn button {
+    background-color: #524cf8;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn button:hover {
+    background-color: #4239e0;
+}
+
+.missingValue {
+    color: red;
+    font-size: 0.9rem;
+}

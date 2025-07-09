@@ -1,0 +1,69 @@
+<div class="background">
+  <div class="buttons">
+    <button [routerLink]="['/bank']">Banks</button>
+    <button [routerLink]="['/branches']">Branches</button>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <form #branchForm="ngForm" (ngSubmit)="onSubmit(branchForm)">
+        <div class="form-group">
+          <label>IFSC</label>
+          <input type="text" name="ifsc" #ifsc="ngModel" [(ngModel)]="model.ifsc" placeholder="IFSC *" required>
+        </div>
+
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" name="address" #address="ngModel" [(ngModel)]="model.address" placeholder="Address *" required>
+        </div>
+
+        <div class="form-group">
+          <label>Bank Code</label>
+          <input type="text" name="bankCode" #bankCode="ngModel" [(ngModel)]="model.bankCode" placeholder="Bank Code *" required>
+        </div>
+
+        <div class="form-group">
+          <label>Branch Name</label>
+          <input type="text" name="branchName" #branchName="ngModel" [(ngModel)]="model.branchName" placeholder="Branch Name *" required>
+        </div>
+
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" name="city" #city="ngModel" [(ngModel)]="model.city" placeholder="City">
+        </div>
+
+        <div class="form-group">
+          <label>District ID</label>
+          <input type="number" name="districtId" #districtId="ngModel" [(ngModel)]="model.districtId" placeholder="District ID *" required>
+        </div>
+
+        <div class="form-group">
+          <label>MICR Code</label>
+          <input type="text" name="micrCode" #micrCode="ngModel" [(ngModel)]="model.micrCode" placeholder="MICR Code">
+        </div>
+
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" name="phone" #phone="ngModel" [(ngModel)]="model.phone" placeholder="Phone">
+        </div>
+
+        <div class="form-group">
+          <label>State Code</label>
+          <input type="text" name="stateCode" #stateCode="ngModel" [(ngModel)]="model.stateCode" placeholder="State Code *" required>
+        </div>
+
+        <div class="form-group">
+          <label>Enabled</label>
+          <select name="isEnabled" #isEnabled="ngModel" [(ngModel)]="model.isEnabled">
+            <option [ngValue]="true">True</option>
+            <option [ngValue]="false">False</option>
+          </select>
+        </div>
+
+        <div class="submit-btn">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

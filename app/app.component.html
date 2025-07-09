@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div class="header">
+      <div [routerLink]="['/reload']" class="service">
+        Limit Rule
+      </div>
+      <div [routerLink]="['/reload-team']" class="service">
+        MPIN
+      </div>
+      <div [routerLink]="['/client-service']" class="service">
+        AuthHub
+      </div>
+      <div [routerLink]="['/bank']" class="service">
+        Banks
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+<div class="background">
+    <div type="" class="buttons">
+        <button [routerLink]="['/reload-team']">Reload Teams</button>
+        <button [routerLink]="['/new-team']">Insert Teams</button>
+    </div>
+    <div class="content">
+      <div class="options">
+        <button [routerLink]="['/s-id-filter']">By Service ID</button>
+        <button [routerLink]="['/id-filter']">By ID</button>
+      </div>
+      <div *ngIf="teamsData.length > 0; else noData">
+            <table class="data_table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Team Name</th>
+                  <th>Team DL</th>
+                  <th>Application Name</th>
+                  <th>Service ID</th>
+                  <th>Description</th>
+                  <th>Average Traffic</th>
+                  <th>Peak Traffic</th>
+                  <th>Peak Traffic Hrs</th>
+                  <th>Edit Team</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let team of teamsData">
+                  <td>{{ team.id }}</td>
+                  <td>{{ team.team_name }}</td>
+                  <td>{{ team.team_dl }}</td>
+                  <td>{{ team.application_name }}</td>
+                  <td>{{ team.service_id }}</td>
+                  <td>{{ team.description }}</td>
+                  <td>{{ team.Average_Traffic }}</td>
+                  <td>{{ team.Peak_Traffic }}</td>
+                  <td>{{ team.Peak_Traffic_Hrs }}</td>
+                  <td>
+                    <button class="editButton" (click)="setEditRule(team)" mat-fab [routerLink]="['/update-team']">
+                      <mat-icon>edit</mat-icon>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      
+          <ng-template #noData>
+            <p>No team data available.</p>
+          </ng-template>
+        </div>
+      </div>

@@ -1,0 +1,58 @@
+<div class="background">
+    <div type="" class="buttons">
+      <button [routerLink]="['/bank']">Banks</button>
+      <button [routerLink]="['/branches']">Branches</button>
+    </div>
+    <div class="content">
+      <h2>All Banks By Bank Code</h2>
+    
+      <div *ngIf="banksData.length > 0; else noData">
+        <table class="bank-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Bank Code</th>
+              <th>Default IFSC</th>
+              <th>IMPS Enabled</th>
+              <th>UPI Enabled</th>
+              <th>Cash Load Enabled</th>
+              <th>Enabled</th>
+              <th>IIN</th>
+              <th>Bank Icon</th>
+              <th>Edit Bank</th>
+              <th>Delete Bank</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let bank of banksData">
+              <td>{{ bank.name }}</td>
+              <td>{{ bank.bankCode }}</td>
+              <td>{{ bank.defaultIfsc }}</td>
+              <td>{{ bank.isImpsEnabled }}</td>
+              <td>{{ bank.isUpiEnabled }}</td>
+              <td>{{ bank.isLoadCashEnabled }}</td>
+              <td>{{ bank.isEnabled }}</td>
+              <td>{{ bank.iin }}</td>
+              <td>
+                <img [src]="bank.bankIconUrl" alt="Icon" width="40" height="40" *ngIf="bank.bankIconUrl">
+              </td>
+              <td>
+                <button class="editButton"  mat-fab [routerLink]="['/update-team']">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+              <td>
+                <button class="deleteButton"  mat-fab (click)="deleteBank(bank)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <ng-template #noData>
+        <p>No bank data available.</p>
+      </ng-template>
+    </div>
+    </div>

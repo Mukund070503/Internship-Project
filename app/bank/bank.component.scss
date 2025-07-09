@@ -1,0 +1,118 @@
+/* General Table Styling */
+.bank-table, .data_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+  }
+  
+  .bank-table th, .bank-table td,
+  .data_table th, .data_table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .bank-table th,
+  .data_table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Bank Icon Styling */
+  img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+  }
+  
+  /* Layout Structure */
+  .background {
+    width: 100vw;
+    display: flex;
+    background-color: #FFF7F3;
+    min-height: 100vh;
+    flex-direction: row;
+  }
+  
+  /* Sidebar Button Panel */
+  .buttons {
+    background-color: white;
+    padding-top: 60px;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    width: 20%;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 40px;
+    border-right: 1px solid #E3D2C3;
+  }
+  
+  /* Buttons */
+  button {
+    height: 40px;
+    width: 80%;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f2c6ac;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #e9a987;
+  }
+  
+  /* Main Content Section */
+  .content {
+    width: 80%;
+    padding: 20px 40px;
+    overflow-x: auto;
+  }
+  
+  /* Title Styling */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .form-group input[type='text'] {
+    width: 280px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input[type='text']:focus {
+    border-color: #e9a987;
+    box-shadow: 0 0 4px rgba(233, 169, 135, 0.2);
+  }
+  
+  /* Smaller Submit Button */
+  .submitButton {
+    background-color: #f2c6ac;
+    margin-top: 5px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    min-width: 80px;
+  }
+  
+  .submitButton:hover {
+    background-color: #e9a987;
+  }
+  

@@ -1,0 +1,101 @@
+<div class="background">
+    <div type="" class="buttons">
+      <button [routerLink]="['/bank']">Banks</button>
+      <button [routerLink]="['/branches']">Branches</button>
+    </div>
+     <div class="content">
+    <div class="container">
+      <form #bankForm="ngForm" (ngSubmit)="onSubmit(bankForm)">
+        <div class="form-group">
+          <label>Bank Code</label>
+          <input type="text" name="bankCode" #bankCode="ngModel" [(ngModel)]="model.bankCode" placeholder="Bank Code *" required>
+            @if (bankCode.invalid && bankCode.touched) {
+            <div class="missingValue">
+              Bank Code is required.
+            </div>
+        }
+        </div>
+
+        <div class="form-group">
+          <label>Bank Name</label>
+          <input type="text" name="name" #name="ngModel" [(ngModel)]="model.name" placeholder="Bank Name *" required>
+            @if (name.invalid && name.touched) {
+            <div class="missingValue">
+              Name is required.
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label>Default IFSC</label>
+          <input type="text" name="defaultIfsc" #defaultIfsc="ngModel" [(ngModel)]="model.defaultIfsc" placeholder="Default IFSC *" required>
+        @if (defaultIfsc.invalid && defaultIfsc.touched) {
+            <div class="missingValue">
+              Default IFSC is required.
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label>Enabled</label>
+          <select name="isEnabled" #isEnabled="ngModel" [(ngModel)]="model.isEnabled">
+            <option [ngValue]="true">True</option>
+            <option [ngValue]="false">False</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>IMPS Enabled</label>
+          <select name="isImpsEnabled" #isImpsEnabled="ngModel" [(ngModel)]="model.isImpsEnabled" required>
+    <option [ngValue]="undefined" disabled selected hidden>IMPS status *</option>
+            <option [ngValue]="true">True</option>
+            <option [ngValue]="false">False</option>
+          </select>
+
+          @if (isImpsEnabled.invalid && isImpsEnabled.touched) {
+            <div class="missingValue">
+              IMPS Status is required.
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label>Load Cash Enabled</label>
+          <select name="isLoadCashEnabled" #isLoadCashEnabled="ngModel" [(ngModel)]="model.isLoadCashEnabled">
+            <option [ngValue]="true">True</option>
+            <option [ngValue]="false">False</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>UPI Enabled</label>
+          <select name="isUpiEnabled" #isUpiEnabled="ngModel" [(ngModel)]="model.isUpiEnabled" required>
+            <option [ngValue]="undefined" disabled selected hidden>UPI Enabled *</option>
+            <option [ngValue]="true">True</option>
+            <option [ngValue]="false">False</option>
+          </select>
+          @if (isUpiEnabled.invalid && isUpiEnabled.touched) {
+            <div class="missingValue">
+              UPI Status is required.
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label>IIN</label>
+          <input type="text" name="iin" #iin="ngModel" [(ngModel)]="model.iin" placeholder="IIN">
+        </div>
+
+        <div class="form-group">
+          <label>Bank Icon URL</label>
+          <input type="text" name="bankIconUrl" #bankIconUrl="ngModel" [(ngModel)]="model.bankIconUrl" placeholder="Bank Icon URL">
+        </div>
+
+        <div class="submit-btn">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+    </div>
+    

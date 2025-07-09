@@ -1,0 +1,35 @@
+
+    <div class="content">
+        <div *ngIf="clientsData.length > 0; else noData">
+            <table class="data_table">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Service Id</th>
+                  <th>Client Name</th>
+                  <th>Client Id</th>
+                  <th>Adhar Service</th>
+                  <th>Pan Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let client of clientsData">
+                  <td>{{ client.id }}</td>
+                  <td>{{ client.serviceId }}</td>
+                  <td>{{ client.clientName }}</td>
+                  <td>{{ client.clientId }}</td>
+                  <td><div class="buttons">
+                    <button (click)="service(client)" [routerLink]="['/adhar-service']">Adhar Service</button>
+                  </div></td>
+                  <td><div type="" class="buttons">
+                    <button (click)="service(client)" [routerLink]="['/pan-service']">Pan Service</button>
+                  </div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      
+          <ng-template #noData>
+            <p>No team data available.</p>
+          </ng-template>
+        </div>
